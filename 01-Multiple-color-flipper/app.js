@@ -2,8 +2,8 @@ const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'F'];
 
 const btn = document.querySelector('.btn');
 const container = document.querySelector('.container');
-const box = [...document.querySelectorAll('.box')];
-
+let box = [];
+console.log(box);
 function getRandomNumber() {
   return Math.floor(Math.random() * hex.length);
 }
@@ -16,7 +16,7 @@ const randomHexColor = () => {
   return hexColor;
 };
 
-let counter = 9;
+let counter = 0;
 
 btn.addEventListener('click', () => {
   counter++;
@@ -26,15 +26,16 @@ btn.addEventListener('click', () => {
 
 function addElement(itemClass) {
   const element = document.createElement('div');
+  box = [...box, element];
   element.classList.add('box');
   element.classList.add(itemClass);
   container.insertBefore(element, btn);
-}
-
-box.forEach((e) => {
-  e.addEventListener('mouseover', (item) => {
-    const color = randomHexColor();
-    item.target.style.backgroundColor = color;
-    btn.style.backgroundColor = color;
+  console.log(box);
+  box.forEach((e) => {
+    e.addEventListener('mouseover', (item) => {
+      const color = randomHexColor();
+      item.target.style.backgroundColor = color;
+      btn.style.backgroundColor = color;
+    });
   });
-});
+}
