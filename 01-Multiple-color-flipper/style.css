@@ -17,7 +17,7 @@ body{
 
 .box{
   height: 200px;
-  border: 2px solid green;
+  border: 2px dashed green;
 }
 
 .btn{
