@@ -1,5 +1,7 @@
 
-
+body{
+  background: rgb(255, 222, 190);
+}
 
 .container{
   position: absolute;
@@ -11,7 +13,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  border: 2px solid red;
 }
 
 .box{
@@ -23,6 +24,7 @@
   margin: auto;
   width: 50px;
   height: 50px;
+  border: none;
 }
 
 i{
